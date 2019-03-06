@@ -1,3 +1,4 @@
+
 val kotlinVersion = "1.3.11"
 
 plugins {
@@ -23,5 +24,4 @@ dependencies {
 
 subprojects {
     version = "1.0"
-    
 }

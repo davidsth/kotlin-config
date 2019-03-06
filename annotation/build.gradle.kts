@@ -6,6 +6,10 @@ plugins {
     kotlin("jvm")
 }
 
+apply {
+    plugin("kotlin")
+}
+
 dependencies {
     implementation(kotlin("stdlib"))
 }
