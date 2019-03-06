@@ -1,3 +1,3 @@
-rootProject.name = "kotlin-configure"
+rootProject.name = "kotlin-config"
 include("annotation", "processor")
 

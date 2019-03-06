@@ -1,11 +1,13 @@
 package dev.davidsth.config.processor
 
 import com.google.auto.service.AutoService
+import com.squareup.kotlinpoet.TypeSpec
 import dev.davidsth.config.annotation.Config
 import javax.annotation.processing.AbstractProcessor
 import javax.annotation.processing.Processor
 import javax.annotation.processing.RoundEnvironment
 import javax.lang.model.element.TypeElement
+import kotlin.reflect.full.companionObjectInstance
 
 @Suppress("unused")
 @AutoService(Processor::class)
@@ -27,7 +29,15 @@ class AnnotationProcessor: AbstractProcessor() {
 
         println(elements)
 
-        println("first: ${elements.first().simpleName}")
+
+        val element = elements.first()
+        println("class name: ${element.simpleName}")
+
+        val packageName = processingEnv.elementUtils.getPackageOf(element).toString()
+
+        println("fields: ${element.javaClass.fields}")
+
+        val singletonInstance = element::class.objectInstance
 
         return false
     }

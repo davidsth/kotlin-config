@@ -20,6 +20,9 @@ dependencies {
     compile(kotlin("stdlib-jdk8"))
 
     compile(kotlin("reflect"))
+
+    compileOnly(project("annotation"))
+    kapt(project("processor"))
 }
 
 subprojects {
