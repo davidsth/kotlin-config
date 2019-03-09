@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version ("1.3.11")
+    kotlin("jvm")
 }
 
 apply {
@@ -21,4 +21,3 @@ dependencies {
     compileOnly(project(":annotation"))
     kapt(project(":processor"))
 }
-

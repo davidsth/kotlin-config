@@ -6,10 +6,10 @@ plugins {
     kotlin("jvm")
 }
 
-apply {
-    plugin("kotlin")
+repositories {
+    mavenCentral()
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
+    implementation(kotlin("stdlib-jdk8"))
 }
