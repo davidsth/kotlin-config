@@ -1,5 +1,9 @@
 # kotlin-config
 
+[![Build Status](https://img.shields.io/travis/davidsth/kotlin-config.svg?style=flat-square)](https://travis-ci.com/davidsth/kotlin-config)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square&logo=appveyor)](LICENSE)
+
+
 The goal is to provide a nice way to provide configuration to plain kotlin/java projects
 similar to how spring does it configuration.
 
@@ -16,7 +20,7 @@ token: TOKEN
 ```
 In any class that you'd like to "inject" a configuration, use the annotation as follows
 
-```kotlin
+```
 @Config
 class Bot {
     println(Bot_Config)
