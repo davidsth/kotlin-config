@@ -1,4 +1,4 @@
-package config.annotation
+package dev.davidsth.config.annotation
 
 @Retention(AnnotationRetention.RUNTIME)
 @Target(AnnotationTarget.CLASS)

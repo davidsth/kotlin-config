@@ -6,6 +6,9 @@
       <module name="dev.davidsth..test" target="1.10" />
       <module name="dev.davidsth.kot.main" target="1.10" />
       <module name="dev.davidsth.kot.test" target="1.10" />
+      <module name="dev.davidsth.kotlin-config.generatedOne" target="1.10" />
+      <module name="dev.davidsth.kotlin-configure.main" target="1.10" />
+      <module name="dev.davidsth.kotlin-configure.test" target="1.10" />
       <module name="kotlin-configure.annotation.main" target="1.10" />
       <module name="kotlin-configure.annotation.test" target="1.10" />
       <module name="kotlin-configure.main" target="1.10" />
