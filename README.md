@@ -1,7 +1,7 @@
 # kotlin-config
 
-[![Build Status](https://img.shields.io/travis/davidsth/kotlin-config.svg?style=flat-square)](https://travis-ci.com/davidsth/kotlin-config)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square&logo=appveyor)](LICENSE)
+![Travis (.com) branch](https://img.shields.io/travis/com/davidsth/kotlin-config/master.svg?style=flat-square)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 
 
 The goal is to provide a nice way to provide configuration to plain kotlin/java projects
