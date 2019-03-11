@@ -1,10 +1,8 @@
 package dev.davidsth.config.processor
 
-import com.google.auto.service.AutoService
 import dev.davidsth.config.annotation.Config
 import dev.davidsth.config.service.AnnotationProcessorService
 import javax.annotation.processing.AbstractProcessor
-import javax.annotation.processing.Processor
 import javax.annotation.processing.RoundEnvironment
 import javax.annotation.processing.SupportedOptions
 import javax.lang.model.SourceVersion
@@ -12,7 +10,6 @@ import javax.lang.model.element.TypeElement
 
 
 @SupportedOptions(AnnotationProcessor.KAPT_KOTLIN_GENERATED_OPTION_NAME)
-@AutoService(Processor::class)
 class AnnotationProcessor : AbstractProcessor() {
 
     companion object {
@@ -28,11 +25,12 @@ class AnnotationProcessor : AbstractProcessor() {
     }
 
     override fun process(annotations: MutableSet<out TypeElement>, roundEnv: RoundEnvironment): Boolean {
+        val annotationProcessorService = AnnotationProcessorService(processingEnv)
         try {
-            AnnotationProcessorService(processingEnv).process(roundEnv, processingEnv)
+            annotationProcessorService.process(roundEnv)
         }
         catch(e: Exception) {
-            AnnotationProcessorService(processingEnv).error(e.message!!)
+            annotationProcessorService.error(e.message!!)
         }
         return false
     }
