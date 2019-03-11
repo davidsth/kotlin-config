@@ -1,14 +1,7 @@
 plugins {
     kotlin("jvm")
+    kotlin("kapt")
 }
-
-apply {
-    plugin("kotlin")
-    plugin("kotlin-kapt")
-}
-
-group = "dev.davidsth"
-version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()

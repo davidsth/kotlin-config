@@ -1,6 +1,6 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-group = "dev.davidsth"
-version = "1.0-SNAPSHOT"
+val kotlinVersion = ext.get("kotlinVersion") as String
 
 plugins {
     kotlin("jvm")
@@ -8,6 +8,10 @@ plugins {
 
 repositories {
     mavenCentral()
+}
+
+tasks.withType<KotlinCompile> {
+    kotlinOptions.jvmTarget = "1.8"
 }
 
 dependencies {

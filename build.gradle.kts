@@ -1,14 +1,11 @@
-plugins {
-    kotlin("jvm") version ("1.3.11")
-}
-
-apply {
-    plugin("kotlin")
-    plugin("kotlin-kapt")
-}
-
 group = "dev.davidsth"
 version = "1.0-SNAPSHOT"
+
+
+plugins {
+    kotlin("jvm") version "1.3.11"
+    kotlin("kapt") version "1.3.11"
+}
 
 repositories {
     mavenCentral()
@@ -17,8 +14,15 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-
     compileOnly(project(":annotation"))
     kapt(project(":processor"))
+}
+
+
+allprojects {
+    ext {
+        set("kotlinVersion", "1.3.21")
+    }
+
 }
 
