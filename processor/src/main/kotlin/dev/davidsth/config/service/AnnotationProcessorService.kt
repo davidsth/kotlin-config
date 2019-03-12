@@ -26,17 +26,23 @@ class AnnotationProcessorService(
     }
 
     private fun generateClass(className: String, pack: String) {
-        val fileName = "Generated_$className"
+        val fileName = "${className}_Config"
 
-        val buildClass = TypeSpec.classBuilder(fileName)
-                .addProperty(PropertySpec.builder("name", String::class)
-                        .initializer("%S", "david")
-                        .build()).build()
+        var buildClass = TypeSpec.objectBuilder(fileName)
+
+        val configs = ConfigUtils.load()
+
+        configs.forEach { (key, value) ->
+            buildClass = buildClass.addProperty(
+                    PropertySpec.builder("$key", String::class).initializer("%S", "$value").build()
+            )
+        }
 
         val kaptKotlinGeneratedDir = File(processingEnv!!.options[AnnotationProcessor.KAPT_KOTLIN_GENERATED_OPTION_NAME])
+        kaptKotlinGeneratedDir.deleteRecursively()
         kaptKotlinGeneratedDir.mkdir()
 
-        FileSpec.builder(pack, className).addType(buildClass).build().writeTo(kaptKotlinGeneratedDir)
+        FileSpec.builder(pack, fileName).addType(buildClass.build()).build().writeTo(kaptKotlinGeneratedDir)
     }
 
     fun error(msg: String, vararg args: Any) {
