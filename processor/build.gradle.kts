@@ -21,10 +21,12 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation("com.squareup:kotlinpoet:0.7.0")
 
+    compile("com.fasterxml.jackson.core:jackson-databind:2.9.8")
+    compile("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.8")
+    compile("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.8")
+
     testImplementation("org.spekframework.spek2:spek-dsl-jvm:2.0.1")
     testRuntimeOnly("org.spekframework.spek2:spek-runner-junit5:2.0.1")
-
-    // spek requires kotlin-reflect, can be omitted if already in the classpath
     testRuntimeOnly("org.jetbrains.kotlin:kotlin-reflect:1.3.21")
     testImplementation("io.mockk:mockk:$mockkVersion")
     //mock lib
