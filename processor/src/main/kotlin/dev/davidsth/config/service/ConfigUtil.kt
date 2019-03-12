@@ -11,7 +11,11 @@ import java.nio.file.Path
 object ConfigUtils {
     private val profileType = System.getProperty("profiles.active", "dev")
 
-    private fun getFilePath(): Path? {
+    fun getResourcesPath(): String {
+        return System.getProperty("user.dir") + "/src/main/resources/"
+    }
+
+    fun getFilePath(): Path? {
 
         val configFileName = when (profileType) {
             "prod" -> "application-prod.yml"
@@ -19,9 +23,10 @@ object ConfigUtils {
         }
 
         // Get the first file found
-        val filePath = File(System.getProperty("user.dir") + "/src/main/resources/").listFiles { _, name ->
+        val filePath = File(getResourcesPath()).listFiles { _, name ->
             name == configFileName
         }.first()
+
         return filePath.toPath()
     }
 

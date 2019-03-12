@@ -40,16 +40,6 @@ tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
 }
 
-tasks.withType<Test> {
-    useJUnitPlatform {
-        includeEngines("spek2")
-    }
-    testLogging {
-        events("passed", "skipped", "failed")
-    }
-}
-
-
 sourceSets["main"].withConvention(KotlinSourceSet::class) {
     kotlin.srcDir("${buildDir.absolutePath}/generated/source/kaptKotlin/")
 }
