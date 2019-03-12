@@ -26,11 +26,15 @@ class AnnotationProcessor : AbstractProcessor() {
 
     override fun process(annotations: MutableSet<out TypeElement>, roundEnv: RoundEnvironment): Boolean {
         val annotationProcessorService = AnnotationProcessorService(processingEnv)
+        val elements = roundEnv.getElementsAnnotatedWith(Config::class.java)
+
+        if (elements.isEmpty()) return false
+
         try {
             annotationProcessorService.process(roundEnv)
         }
         catch(e: Exception) {
-            annotationProcessorService.error(e.message!!)
+            annotationProcessorService.error("AnnotationProcessorService: $e")
         }
         return false
     }
