@@ -23,6 +23,8 @@ object ConfigUtils {
         }
 
         // Get the first file found
+        if (File(getResourcesPath()).listFiles() == null) return null
+
         val filePath = File(getResourcesPath()).listFiles { _, name ->
             name == configFileName
         }.first()

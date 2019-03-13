@@ -40,6 +40,6 @@ tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
 }
 
-sourceSets["main"].withConvention(KotlinSourceSet::class) {
-    kotlin.srcDir("${buildDir.absolutePath}/generated/source/kaptKotlin/")
-}
+//sourceSets["main"].withConvention(KotlinSourceSet::class) {
+//    kotlin.srcDir("${buildDir.absolutePath}/generated/source/kaptKotlin/")
+//}

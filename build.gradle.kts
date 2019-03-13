@@ -14,8 +14,6 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    compileOnly(project(":annotation"))
-    kapt(project(":processor"))
 }
 
 
