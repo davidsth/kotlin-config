@@ -7,6 +7,7 @@ class MarvelUniverse {
     init {
         println("name: ${MarvelUniverse_Config.name}")
         println("language: ${MarvelUniverse_Config.language}")
+        println("id: ${MarvelUniverse_Config.id}")
     }
 }
 

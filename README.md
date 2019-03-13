@@ -15,16 +15,30 @@ Given a yml property file:
 ```yaml
 # application-default.yml
 name: MyApp
-token: TOKEN
+language: kotlin
+id: 1
 
 ```
 In any class that you'd like to "inject" a configuration, use the annotation as follows
 
 ```
 @Config
-class Bot {
-    println(Bot_Config)
+class MarvelUniverse {
+    init {
+        println("name: ${MarvelUniverse_Config.name}")
+        println("language: ${MarvelUniverse_Config.language}")
+    }
 }
+
+fun main() {
+    MarvelUniverse()
+}
+
+// outputs
+
+name: MyApp
+language: kotlin
+id: 1
 
 ```
 
